@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/createbot.css">
+    <link href="images/rose.png" rel="icon">
+    <title>Create Bot</title>
+</head>
+<body>
+    <br><br><br><br>
+    <div class="cointainer">
+    <div class="title">Create My Bot</div>
+    <form action="createmybot" method="POST">
+    <div class="bot-details">
+    <div class="info-input">
+    <span class="detail">Bot Id <span class="tips"></span></span>
+    <input type="number" placeholder="Your Bot ID" name="id" id="id" required></input>
+    </div>
+    <div class="info-input">
+    <span class="detail">Bot Token <span class="tips"></span></span>
+    <input class="token" type="password" placeholder="Your Bot Token" name="token" id="token" required></input>
+    </div>
+    <div class="info-input">
+    <span class="detail">Bot Name <span class="tips"></span></span>
+    <input type="text" placeholder="Your Bot Name" name="name" id="name" required></input>
+    </div>
+    <div class="info-input">
+    <span class="detail">Bot Prefix <span class="tips"></span></span>
+    <input type="text" value="!" name="prefix" id="prefix" required></input>
+    </div>
+    <div class="info-input">
+    <span class="detail">Owner ID <span class="tips"></span></span>
+    <input type="number" placeholder="Your Discord ID" name="ownerid" id="ownerid" required></input>
+    </div>
+    <div class="info-input">
+    <span class="detail">Bot type<span class="tips"></span></span>
+    <input type="text" placeholder="Bot Type" name="type" id="type" required list="bottypes"></input>  
+    <datalist id="bottypes" name="bottype">
+        <% config.bot.type.map(t => {%>
+        <option value="Clan Bot"></option>
+        <option value="Music Bot"></option>
+        <option value="Giveaway Bot"></option>
+        <option value="Rythm Clone Bot"></option>
+        <option value="Lava Music Bot"></option>
+        <option value="Waiting Room Bot"></option>
+        <option value="Mod Mail Bot"></option>
+        <option value="Moderator Bot"></option>
+        <option value="24/7 Music Bot"></option>
+        <option value="Security Bot"></option>
+        <option value="NSFW and Fun"></option>
+        <% }); %>
+    </datalist>
+    </div>
+    <div class="info-input">
+        <span class="detail">Activity<span class="tips"></span></span>
+        <input type="text" placeholder="Activity Type" name="activitytype" id="activitytype" required list="activitytypes"></input>  
+        <datalist id="activitytypes" name="activitytype">
+            <% config.bot.activitytype.map(t => {%>
+            <option value="Playing"></option>
+            <option value="Watching"></option>
+            <option value="Listening"></option>
+            <option value="Streaming"></option>
+            <% }); %>
+        </datalist>
+        </div>
+    <div class="info-input">
+        <span class="detail">Bot Avatar<span class="tips"></span></span>
+        <input type="text" placeholder="Your Bot Avatar URL" name="avatar" id="avatar" required></input>
+    </div>
+    <div class="info-input">
+        <span class="detail">Footer Text<span class="tips"></span></span>
+        <input type="text" placeholder="Bot Footer Text" name="footer" id="footer" required></input>
+    </div>
+    <div class="info-input">
+        <span class="detail">Embed Colour<span class="tips"></span></span>
+        <input type="color" placeholder="Bot Embed Colour" name="embedcolor" id="embedcolor" value="#ff0000" required></input>
+    </div>
+    </div>
+    <div class="button">
+    <button type="submit">Create</button>
+    </div>
+    </form>
+    
+</div>
+</body>
+</html>
